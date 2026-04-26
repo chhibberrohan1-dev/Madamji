@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Madam Ji ❤️</title>
 
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:#ffccd5;
+  overflow:hidden;
+}
+
+/* popup */
+.popup{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:10;
+}
+.popup img{
+  width:260px;
+  border-radius:20px;
+}
+.popup button{
+  margin-top:10px;
+}
+
+/* slides */
+.container{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.slide{
+  position:absolute;
+  text-align:center;
+  opacity:0;
+  transform:scale(0.8);
+  transition:0.6s ease;
+}
+
+.active{
+  opacity:1;
+  transform:scale(1);
+}
+
+img{
+  width:260px;
+  border-radius:20px;
+  margin-top:10px;
+}
+
+button{
+  padding:12px 18px;
+  margin:10px;
+  border:none;
+  border-radius:12px;
+  background:#ff4d6d;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div>
+    <img src="Photo 1.jpeg""><br>
+    <button onclick="start()">Open 💌</button>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- SLIDE 1 -->
+<div class="slide active" id="s1">
+  <h2>Madam Ji ❤️</h2>
+  <p>Every moment with you feels special ✨</p>
+  <img src="Photo 2.jpeg"><br>
+  <button onclick="next(1)">Next ➡️</button>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide" id="s2">
+  <p>Some memories I’ll always keep close 💖</p>
+  <img src="Photo 3.jpeg"><br>
+  <button onclick="next(2)">Next ➡️</button>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide" id="s3">
+  <p>Let’s create more beautiful memories together 🌍</p>
+  <img src="Photo 4.jpeg"><br>
+  <h3>Where should we go?</h3>
+  <button onclick="choose('Ujjain')">Ujjain 🛕</button>
+  <button onclick="choose('Goa')">Goa 🌴</button>
+</div>
+
+<!-- FINAL SLIDE -->
+<div class="slide" id="final">
+  <h2>❤️</h2>
+  <p>
+  So HELLO MADAM JI, aap waha tk aa gyi hai, i wish ki aage bhi aap chale hmare saath, 
+  mai puri koshish krunga ki aap hmesha mere saath khush rhe aur mere saath rhe. 
+  I just want it with #NONAZARR.<br><br>
+  With all love and respect<br>
+  Aapka Rohan
+  </p>
+  <img src="Photo 5.jpeg">
+</div>
+
+</div>
+
+<script>
+function start(){
+  document.getElementById("popup").style.display="none";
+}
+
+/* slide animation */
+function next(n){
+  document.getElementById("s"+n).classList.remove("active");
+  document.getElementById("s"+(n+1)).classList.add("active");
+}
+
+/* final */
+function choose(){
+  document.getElementById("s3").classList.remove("active");
+  document.getElementById("final").classList.add("active");
+}
+</script>
+
+</body>
+</html>
